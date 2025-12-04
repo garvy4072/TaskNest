@@ -3,16 +3,21 @@
 import { useState } from 'react';
 import { TextField, Button, Card, Typography } from '@mui/material';
 import API from '../api';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
+	const navigate = useNavigate();
 	const [password, setPassword] = useState('');
 
 	const handleSubmit = async () => {
 		try {
 			await API.post('/api/user/register', { name, email, password });
 			alert('Registered successfully. Now login.');
+			setTimeout(() => {
+				navigate('/login');
+			}, 500);
 		} catch (error) {
 			alert(error.response?.data?.message || 'Registration failed');
 		}
