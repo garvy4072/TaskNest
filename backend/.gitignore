@@ -1,0 +1,21 @@
+        # Ignore build output
+        /build/
+        /dist/
+
+        # Ignore dependency directories
+        node_modules/
+        vendor/
+
+        # Ignore temporary and log files
+        *.log
+        *.tmp
+        .env
+        .DS_Store # macOS specific
+        Thumbs.db # Windows specific
+
+        # Ignore environment variables
+        .env
+
+        # Ignore IDE specific files
+        .vscode/
+        .idea/
